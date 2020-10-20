@@ -1,0 +1,23 @@
+[linux1]
+ubuntu1 ansible_host=ubuntu@ec2-18-185-68-57.eu-central-1.compute.amazonaws.com
+[linux2] 
+ubuntu2 ansible_host=ubuntu@ec2-18-192-53-95.eu-central-1.compute.amazonaws.com
+[linux3]  
+ubuntu3 ansible_host=ubuntu@ec2-18-157-187-66.eu-central-1.compute.amazonaws.com
+[linux4]   
+ubuntu4 ansible_host=ubuntu@ec2-18-159-141-43.eu-central-1.compute.amazonaws.com 
+
+[iaas:children]
+linux1
+linux2
+
+[aws:children]
+linux1
+linux2
+linux3
+linux4
+
+
+[aws:vars]
+ansible_ssh_user=ec-2
+ansible_ssh_private_key_file=~/.ssh/ansible_aws
