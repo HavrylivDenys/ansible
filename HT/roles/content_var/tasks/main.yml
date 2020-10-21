@@ -1,0 +1,4 @@
+---
+- name: define content of `/etc/issue` as variable
+  shell: cat {{ path }}
+  register: result

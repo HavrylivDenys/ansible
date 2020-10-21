@@ -16,3 +16,7 @@ GL homework
 Optional:
 
 - use `ansible_user` and `ansible_password` for ssh connection and store passwords for each VM in encrypred way (add vault password to README.md in this case)
+
+# The Results.
+
+![App](public/log.png)

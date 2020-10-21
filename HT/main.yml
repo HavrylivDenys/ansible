@@ -1,0 +1,15 @@
+---
+- name: invoke the role for `/etc/iaac` for hosts group `iaas`
+  hosts: iaas
+  become: yes
+  roles:
+    - create_file
+- name: invoke the role for defining variable for all hosts
+  hosts: all
+  become: yes
+  roles:
+    - content_var
+  tasks:
+    - name: printing hostnames together with registered variables
+      debug:
+        msg: "Host: {{ inventory_hostname }}. Issued variable: {{ result.stdout.split('\\n')[0] }}"
